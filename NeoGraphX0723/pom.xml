@@ -1,0 +1,308 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <!-- 模型版本。maven2.0必须是这样写，现在是maven2唯一支持的版本 -->
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- 公司或者组织的唯一标志，并且配置时生成的路径也是由此生成， 如com.winner.trade，maven会将该项目打成的jar包放本地路径：/com/winner/trade -->
+  <groupId>com.fengjr.NeographX</groupId>
+  <!-- 本项目的唯一ID，一个groupId下面可能多个项目，就是靠artifactId来区分的 -->
+  <artifactId>NeoGraphX0723</artifactId>
+  <!-- 本项目目前所处的版本号 -->
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <inceptionYear>2019</inceptionYear>
+
+  <!-- 用户可以定义一个或多个Maven属性，然后在POM的其他地方使用${属性名}的方式引用该属性 -->
+  <properties>
+    <scala.version>2.11</scala.version>
+    <!--<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+    <!--<spring.version>3.2.0.RELEASE</spring.version>-->
+    <!--<jackson.version>2.4.3</jackson.version>-->
+    <!--<slf4j.version>1.7.7</slf4j.version>-->
+    <!--<scala.maven.version>2.10.4</scala.maven.version>-->
+  </properties>
+
+  <!-- 用来配置maven项目的远程仓库 -->
+  <repositories>
+    <repository>
+      <id>SparkPackagesRepo</id>
+      <url>http://dl.bintray.com/spark-packages/maven</url>
+    </repository>
+
+    <repository>
+      <id>scala-tools.org</id>
+      <name>Scala-Tools Maven2 Repository</name>
+      <url>http://scala-tools.org/repo-releases</url>
+    </repository>
+  </repositories>
+
+  <!-- 用来配置maven插件的远程仓库 -->
+  <pluginRepositories>
+    <pluginRepository>
+      <id>scala-tools.org</id>
+      <name>Scala-Tools Maven2 Repository</name>
+      <url>http://scala-tools.org/repo-releases</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <!-- 定义本项目的依赖关系 -->
+  <dependencies>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <!--<scope>test</scope>-->
+    </dependency>
+    <dependency>
+      <groupId>neo4j-contrib</groupId>
+      <artifactId>neo4j-spark-connector</artifactId>
+      <version>2.2.1-M5</version>
+      <!--<scope>provided</scope>-->
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-graphx -->
+    <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-graphx_2.11</artifactId>
+      <version>2.2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-mllib_2.11</artifactId>
+      <version>2.2.1</version>
+      <!--<scope>runtime</scope>-->
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.scala-lang/scala-library -->
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>2.11.12</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+    <!--<dependency>-->
+      <!--<groupId>log4j</groupId>-->
+      <!--<artifactId>log4j</artifactId>-->
+      <!--<version>1.2.17</version>-->
+    <!--</dependency>-->
+
+    <!--<dependency>-->
+      <!--<groupId>org.scala-lang</groupId>-->
+      <!--<artifactId>scala-reflect</artifactId>-->
+      <!--<version>2.11.12</version>-->
+      <!--&lt;!&ndash;<scope>provided</scope>&ndash;&gt;-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+      <!--<groupId>org.scala-lang</groupId>-->
+      <!--<artifactId>scala-actors</artifactId>-->
+      <!--<version>2.11.12</version>-->
+      <!--&lt;!&ndash;<scope>provided</scope>&ndash;&gt;-->
+    <!--</dependency>-->
+
+    <!--<dependency>-->
+      <!--<groupId>org.scala-lang</groupId>-->
+      <!--<artifactId>scalap</artifactId>-->
+      <!--<version>2.11.12</version>-->
+      <!--&lt;!&ndash;<scope>provided</scope>&ndash;&gt;-->
+    <!--</dependency>-->
+
+    <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-hive -->
+    <!--<dependency>-->
+      <!--<groupId>org.apache.spark</groupId>-->
+      <!--<artifactId>spark-hive_2.11</artifactId>-->
+      <!--<version>2.2.1</version>-->
+      <!--&lt;!&ndash;<scope>provided</scope>&ndash;&gt;-->
+    <!--</dependency>-->
+    <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
+    <!--<dependency>-->
+      <!--<groupId>org.apache.spark</groupId>-->
+      <!--<artifactId>spark-core_2.11</artifactId>-->
+      <!--<version>2.2.1</version>-->
+    <!--</dependency>-->
+    <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-mllib -->
+
+    <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-hive -->
+    <!--<dependency>-->
+      <!--<groupId>org.apache.spark</groupId>-->
+      <!--<artifactId>spark-hive_2.11</artifactId>-->
+      <!--<version>2.2.1</version>-->
+      <!--&lt;!&ndash;<scope>provided</scope>&ndash;&gt;-->
+    <!--</dependency>-->
+    <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-graphx -->
+
+    <!--<dependency>-->
+      <!--<groupId>org.apache.spark</groupId>-->
+      <!--<artifactId>spark-sql_2.11</artifactId>-->
+      <!--<version>2.2.1</version>-->
+      <!--&lt;!&ndash;<scope>provided</scope>&ndash;&gt;-->
+    <!--</dependency>-->
+
+    <!--<dependency>-->
+      <!--<groupId>com.alibaba</groupId>-->
+      <!--<artifactId>fastjson</artifactId>-->
+      <!--<version>1.2.7</version>-->
+    <!--</dependency>-->
+
+
+
+    <!-- https://mvnrepository.com/artifact/org.neo4j/neo4j-kernel -->
+    <!-- https://mvnrepository.com/artifact/org.neo4j/neo4j -->
+    <!--<dependency>-->
+      <!--<groupId>org.neo4j</groupId>-->
+      <!--<artifactId>neo4j</artifactId>-->
+      <!--<version>3.4.12</version>-->
+    <!--</dependency>-->
+
+    <!--<dependency>-->
+      <!--<groupId>org.specs</groupId>-->
+      <!--<artifactId>specs</artifactId>-->
+      <!--<version>1.2.5</version>-->
+      <!--<scope>test</scope>-->
+    <!--</dependency>-->
+  </dependencies>
+
+  <build>
+    <!--项目源码目录，当构建项目的时候，构建系统会编译目录里的源码。该路径是相对于pom.xml的相对路径。 -->
+    <sourceDirectory>src/main/scala</sourceDirectory>
+    <!--项目单元测试使用的源码目录，当测试项目的时候，构建系统会编译目录里的源码。该路径是相对于pom.xml的相对路径。 -->
+    <testSourceDirectory>src/test/scala</testSourceDirectory>
+
+    <!--使用的插件列表 。 -->
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+              <goal>testCompile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.1.1</version>
+        <configuration>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <!--<plugin>-->
+        <!--<groupId>org.scala-tools</groupId>-->
+        <!--<artifactId>maven-scala-plugin</artifactId>-->
+        <!--&lt;!&ndash;在构建生命周期中执行一组目标的配置。每个目标可能有不同的配置。 &ndash;&gt;-->
+        <!--<executions>-->
+          <!--<execution>-->
+            <!--&lt;!&ndash;配置的执行目标 &ndash;&gt;-->
+            <!--<goals>-->
+              <!--<goal>compile</goal>-->
+              <!--<goal>testCompile</goal>-->
+            <!--</goals>-->
+          <!--</execution>-->
+        <!--</executions>-->
+        <!--&lt;!&ndash;作为DOM对象的配置,配置项因插件而异 &ndash;&gt;-->
+        <!--<configuration>-->
+          <!--<scalaVersion>${scala.version}</scalaVersion>-->
+          <!--<args>-->
+            <!--<arg>-target:jvm-1.5</arg>-->
+          <!--</args>-->
+        <!--</configuration>-->
+        <!--<extensions>true</extensions>-->
+      <!--</plugin>-->
+
+      <!--<plugin>-->
+        <!--<groupId>org.apache.maven.plugins</groupId>-->
+        <!--<artifactId>maven-eclipse-plugin</artifactId>-->
+        <!--<configuration>-->
+          <!--<downloadSources>true</downloadSources>-->
+          <!--<buildcommands>-->
+            <!--<buildcommand>ch.epfl.lamp.sdt.core.scalabuilder</buildcommand>-->
+          <!--</buildcommands>-->
+          <!--<additionalProjectnatures>-->
+            <!--<projectnature>ch.epfl.lamp.sdt.core.scalanature</projectnature>-->
+          <!--</additionalProjectnatures>-->
+          <!--<classpathContainers>-->
+            <!--<classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>-->
+            <!--<classpathContainer>ch.epfl.lamp.sdt.launching.SCALA_CONTAINER</classpathContainer>-->
+          <!--</classpathContainers>-->
+        <!--</configuration>-->
+      <!--</plugin>-->
+    </plugins>
+    <!--构建设置-->
+  </build>
+
+  <!--<reporting>-->
+    <!--<plugins>-->
+      <!--<plugin>-->
+        <!--<groupId>org.scala-tools</groupId>-->
+        <!--<artifactId>maven-scala-plugin</artifactId>-->
+        <!--<configuration>-->
+          <!--<scalaVersion>${scala.version}</scalaVersion>-->
+        <!--</configuration>-->
+      <!--</plugin>-->
+    <!--</plugins>-->
+  <!--</reporting>-->
+</project>
+
+<!--<build>-->
+<!--<sourceDirectory>src/main/scala</sourceDirectory>-->
+<!--<testSourceDirectory>src/test/scala</testSourceDirectory>-->
+<!--<plugins>-->
+  <!--<plugin>-->
+    <!--<groupId>org.scala-tools</groupId>-->
+    <!--<artifactId>maven-scala-plugin</artifactId>-->
+    <!--<version>2.15.2</version>-->
+    <!--&lt;!&ndash;在构建生命周期中执行一组目标的配置。每个目标可能有不同的配置。 &ndash;&gt;-->
+    <!--<executions>-->
+      <!--<execution>-->
+
+        <!--&lt;!&ndash;配置的执行目标 &ndash;&gt;-->
+        <!--<goals>-->
+          <!--<goal>compile</goal>-->
+          <!--<goal>testCompile</goal>-->
+        <!--</goals>-->
+      <!--</execution>-->
+    <!--</executions>-->
+    <!--&lt;!&ndash;作为DOM对象的配置,配置项因插件而异 &ndash;&gt;-->
+    <!--<configuration>-->
+      <!--<scalaVersion>${scala.version}</scalaVersion>-->
+      <!--<args>-->
+        <!--<arg>-target:jvm-1.5</arg>-->
+      <!--</args>-->
+    <!--</configuration>-->
+    <!--<extensions>true</extensions>-->
+  <!--</plugin>-->
+
+  <!--<plugin>-->
+    <!--<groupId>org.apache.maven.plugins</groupId>-->
+    <!--<artifactId>maven-eclipse-plugin</artifactId>-->
+    <!--<configuration>-->
+      <!--<downloadSources>true</downloadSources>-->
+      <!--<buildcommands>-->
+        <!--<buildcommand>ch.epfl.lamp.sdt.core.scalabuilder</buildcommand>-->
+      <!--</buildcommands>-->
+      <!--<additionalProjectnatures>-->
+        <!--<projectnature>ch.epfl.lamp.sdt.core.scalanature</projectnature>-->
+      <!--</additionalProjectnatures>-->
+      <!--<classpathContainers>-->
+        <!--<classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>-->
+        <!--<classpathContainer>ch.epfl.lamp.sdt.launching.SCALA_CONTAINER</classpathContainer>-->
+      <!--</classpathContainers>-->
+    <!--</configuration>-->
+  <!--</plugin>-->
+<!--</plugins>-->
+<!--&lt;!&ndash;构建设置&ndash;&gt;-->
+<!--</build>-->
